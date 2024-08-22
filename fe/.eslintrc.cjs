@@ -21,7 +21,8 @@ const config = {
       {
         ignores: ['index']
       }
-    ]
+    ],
+    'import/prefer-default-export': 'off'
   },
   settings: {
     'import/resolver': {

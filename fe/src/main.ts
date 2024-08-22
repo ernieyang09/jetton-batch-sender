@@ -1,13 +1,15 @@
 import './style.css'
 import { createApp } from 'vue'
 import PrimeVue from 'primevue/config'
-import { createPinia } from 'pinia'
+
 import Noir from '@/themes/app-theme'
 import router from '@/router'
+import store from '@/store'
+import { createRouterMiddleware } from './router/middleware'
 import App from './App.vue'
 
 createApp(App)
-  .use(createPinia())
+  .use(store)
   .use(PrimeVue, {
     theme: {
       preset: Noir.preset,
@@ -19,3 +21,5 @@ createApp(App)
   })
   .use(router)
   .mount('#app')
+
+createRouterMiddleware(router)
